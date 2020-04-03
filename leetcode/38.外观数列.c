@@ -11,51 +11,42 @@ char * countAndSay(int n){
 char a[20]="1";
 char b[20]="";
 char *r;
-int i=1,j,k,p=0,s=0;
-char q='0';
+int i=1,j,k,p=0;
+int q=0;
 for(;i<n;i++){
-    if(s==0){
-        for(j=0;a[j]!='\0';j++);
-        q='0';
+        j=strlen(a);
+        q=1;
         p=0;
-        for(k=0;k<j;k++){
+        if(j==1){
+        b[0]=1;
+        b[1]=1;
+        }
+        for(k=0;k<j-1;k++){
             if(a[k]==a[k+1]){
                 q++;
                 }
             else{
-                b[p++]=++q;
+                b[p++]=q+'0';
                 b[p++]=a[k];
-                q='0';
-            }   
+                q=1;
+            } 
+              
         }
+        b[p++]=q+'0';
+        b[p++]=a[k];
         b[p]='\0';
-        s=1;
+       for(j=0;j<strlen(b);j++) {
+           a[j]=b[j];
+       }
+       a[j]='\0';
     }
-    else{
-        for(j=0;b[j]!='\0';j++);
-        q='0';
-        p=0;
-        for(k=0;k<j;k++){
-            if(b[k]==b[k+1]){
-                q++;
-                }
-            else{
-                a[p++]=++q;
-                a[p++]=b[k];
-                q='0';
-            }   
-        }
-        a[p]='\0';
-        s=0;
-    }
+   return r=&a; 
 }
-    if(s==0)
-        return r=&a;
-    else
-        return r=&b;
+    
+    
     
 
-}
+
 
 
 
