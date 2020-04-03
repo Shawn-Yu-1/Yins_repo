@@ -8,6 +8,7 @@
 
 
 void sortColors(int* nums, int numsSize){
+    //本次采用2次交换偏序，保证得到有序
 int temp,i,j=numsSize-1;
 for(i=0;i<numsSize;i++){
     if(i>=j)

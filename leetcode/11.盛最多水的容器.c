@@ -12,7 +12,7 @@ int maxArea(int* height, int heightSize){
     for(i=0;i<heightSize-1;i++){
         j=i+1;
         for(;j<heightSize-1;j++)
-            if(height[j]>height[j+1])
+            if(height[j]>height[j+1]) //寻找一个最长的递增序列，从该结尾处迭代
                 break;
         for(;j<heightSize;j++){
             min=(height[i]<height[j])?height[i]:height[j];
