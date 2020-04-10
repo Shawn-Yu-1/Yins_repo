@@ -8,6 +8,7 @@
 
 
 bool canFinish(int numCourses, int** prerequisites, int prerequisitesSize, int* prerequisitesColSize){
+    // 本质是检测一个图中有没有环，方法比较暴力
     int i,j,k,t,p;
     int* temp = (int*)malloc(sizeof(int)*2);
     if(prerequisitesSize==0){
