@@ -13,7 +13,6 @@ class Solution:
         while i<n:
             k=0
             q=1
-            p=0
             b=[]
             while k<len(a)-1:
                 if a[k]==a[k+1]:
@@ -30,6 +29,9 @@ class Solution:
             i+=1
         st = ''.join(str(i) for i in a)
         return st
+
+temp = Solution()
+print(temp.countAndSay(20))
 
 
 # @lc code=end
